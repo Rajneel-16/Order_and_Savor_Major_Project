@@ -1,0 +1,2 @@
+1 - only when a user is logged in, the PROFILE ICON is active otherwise it redirects the user to REGISTRATION PAGE
+2 - when an admin or staff logins, it redirects to the ADMINISTRATION PAGE ad for customer it redirects to dashboard 

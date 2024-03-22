@@ -1,0 +1,127 @@
+{% extends "base1.html" %}
+{% block content %}
+
+<div class="flex flex-col items-center border-b bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32">
+  <a href="#" class="text-2xl font-bold text-gray-800">Order_& Savor | Checkout Page</a>
+  <div class="mt-4 py-2 text-xs sm:mt-0 sm:ml-auto sm:text-base">
+    <div class="relative">
+      <ul class="relative flex w-full items-center justify-between space-x-2 sm:space-x-4">
+        <li class="flex items-center space-x-3 text-left sm:space-x-4">
+          <a class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-200 text-xs font-semibold text-emerald-700" href="#"
+            ><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg
+          ></a>
+          <span class="font-semibold text-gray-900">Select</span>
+        </li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        <li class="flex items-center space-x-3 text-left sm:space-x-4">
+          <a class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-600 text-xs font-semibold text-white ring ring-gray-600 ring-offset-2" href="#">2</a>
+          <span class="font-semibold text-gray-900">Confirm Order</span>
+        </li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        <li class="flex items-center space-x-3 text-left sm:space-x-4">
+          <a class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-400 text-xs font-semibold text-white" href="#">3</a>
+          <span class="font-semibold text-gray-500">Payment</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
+  <div class="px-4 pt-8">
+    <p class="text-xl font-medium">Order Summary</p>
+    <p class="text-gray-400">Check your items before proceeding to payment</p>
+    <div class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
+
+      {% comment %} this is where to render the product  {% endcomment %}
+      <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+        <img class="m-2 h-24 w-28 rounded-md border object-cover object-center" src={{order.image.url}} alt="" />
+        <div class="flex w-full flex-col px-4 py-4">
+          <span class="font-semibold">{{order.name}}</span>
+          <span class="float-right text-gray-400">{{order.price}} Rs<span>
+          <p class="text-lg font-bold">{{order.discounted_price}} Rs</p>
+        </div>
+      </div>
+
+      <div class="flex flex-col rounded-lg bg-white sm:flex-row">
+        <img class="m-2 h-24 w-28 rounded-md border object-cover object-center" src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+        <div class="flex w-full flex-col px-4 py-4">
+          <span class="font-semibold">Nike Air Max Pro 8888 - Super Light</span>
+          <span class="float-right text-gray-400">42EU - 8.5US</span>
+          <p class="mt-auto text-lg font-bold">$238.99</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
+    <p class="text-xl font-medium">Amount Details</p>
+    <div class="">
+      <!-- Total -->
+      <div class="mt-6 border-t border-b py-2">
+        <div class="flex items-center justify-between">
+          <p class="text-sm font-medium text-gray-900">Subtotal</p>
+          <p class="font-semibold text-gray-900">Rs {{order.price}}</p>
+        </div>
+        <div class="flex items-center justify-between">
+          <p class="text-sm font-medium text-gray-900">Discount</p>
+          <p class="font-semibold text-gray-900">Rs {{discount}}</p>
+        </div>
+        <div class="flex items-center justify-between">
+          <p class="text-sm font-medium text-gray-900">Delivery Charges</p>
+          <p class="font-semibold text-gray-900">RS 0.00</p>
+        </div>
+      </div>
+      <div class="mt-6 flex items-center justify-between">
+        <p class="text-sm font-medium text-gray-900">Total</p>
+        <p class="text-2xl font-semibold text-gray-900">RS {{order.discounted_price}}</p>
+      </div>
+    </div>
+    <form method='POST'>
+      {% csrf_token %}
+        {% if payment %}
+        <button id="rzp-button1" class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Pay</button>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script>
+        var options = {
+            "key": "rzp_test_Gj86C8HLpdXP5v", // Enter the Key ID generated from the Dashboard
+            "amount": "{{order.discounted_price}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Food Ordering Site", //your business name
+            "description": "ordering  {{order.name}}  ",
+            "image": "https://example.com/your_logo",
+            "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "callback_url": "http://127.0.0.1:8000/",
+            "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
+                "name": "{{request.user}}", //your customer's name
+                "email": "{{request.user.email}}",
+                "contact": "8828193065" //Provide the customer's phone number for better conversion rates 
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        document.getElementById('rzp-button1').onclick = function(e){
+            rzp1.open();
+            e.preventDefault();
+        }
+        </script>
+        {% else %}
+        <button class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Proceed to Pay</button>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
+{% block tailwind %}
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+{% endblock tailwind %}
