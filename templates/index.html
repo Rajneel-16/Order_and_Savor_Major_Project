@@ -11,12 +11,12 @@
                             <img src="/static/img/carousel-1.jpg" alt="Image">
                         </div>
                         <div class="carousel-text">
-                            <h1>Best <span>Quality</span> Ingredients</h1>
+                            <h1>Variety & <span>Quality</span></h1>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac consequat at lectus in malesuada
+                                Savor the diversity of our restaurant with Indian, Chinese, Continental, Thai, Mexican, and beyond. Indulge in a culinary journey with our wide selection of dishes to tantalize your taste buds!
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">View Menu</a>
+                                <a class="btn custom-btn" href="{% url 'all_dishes' %}">View Menu</a>
                                 <a class="btn custom-btn" href="">Book Table</a>
                             </div>
                         </div>
@@ -26,12 +26,12 @@
                             <img src="/static/img/carousel-2.jpg" alt="Image">
                         </div>
                         <div class="carousel-text">
-                            <h1>World’s <span>Best</span> Chef</h1>
+                            <h1>India’s <span>Best</span> Chef</h1>
                             <p>
-                                Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis, orci sodales varius fermentum, tortor
+                                Experience excellence in every bite crafted by India's finest chef at our restaurant!
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">View Menu</a>
+                                <a class="btn custom-btn" href="{% url 'all_dishes' %}">View Menu</a>
                                 <a class="btn custom-btn" href="">Book Table</a>
                             </div>
                         </div>
@@ -43,10 +43,10 @@
                         <div class="carousel-text">
                             <h1>Fastest Order <span>Delivery</span></h1>
                             <p>
-                                Sed ultrices, est eget feugiat accumsan, dui nibh egestas tortor, ut rhoncus nibh ligula euismod quam. Proin pellentesque odio
+                                Enjoy lightning-fast order delivery guaranteed to satisfy your cravings at our restaurant!
                             </p>
                             <div class="carousel-btn">
-                                <a class="btn custom-btn" href="">View Menu</a>
+                                <a class="btn custom-btn" href="{% url 'all_dishes' %}">View Menu</a>
                                 <a class="btn custom-btn" href="">Book Table</a>
                             </div>
                         </div>
@@ -69,10 +69,14 @@
                             </div>
                             <div class="about-text">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
+                                    Now you can book a table even when you are far away!
+                                    Let us know what you are your preferences by filling out this form.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
+                                    From intimate gatherings to lively celebrations, book your table for private dinners or happy hours and create cherished memories with us.
+                                    Reserve your exclusive spot for intimate private dinners and unwind at our happy hours; book your table now for unforgettable moments.
+                                    Indulge in personalized dining experiences and enjoy special deals during our happy hours; secure your reservation today. 
+                                    Elevate your dining experience with tailored private dinners and unwind with friends at our lively happy hours; reserve your table in advance to ensure the perfect evening.
                                 </p>
                             </div>
                         </div>
@@ -161,7 +165,7 @@
                     <div class="col-lg-6">
                         <div class="about-img">
                             <img src="/static/img/about.jpg" alt="Image">
-                            <button type="button" class="btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                            <button type="button" class="btn-play" data-toggle="modal" data-src="https://www.youtube.com/shorts/jEH33KJQIZc" data-target="#videoModal">
                                 <span></span>
                             </button>
                         </div>
@@ -174,10 +178,10 @@
                             </div>
                             <div class="about-text">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
+                                    Since its establishment in 1990, our restaurant has become a beacon of culinary excellence, earning the trust and loyalty of patrons through a winning combination of superb cuisine, talented chefs, and affordable prices. For over three decades, we have remained steadfast in our commitment to providing an unparalleled dining experience that exceeds expectations.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
+                                    At the heart of our success lies our team of esteemed chefs, renowned for their mastery of diverse culinary traditions and their unwavering dedication to crafting dishes of exceptional quality. With a wealth of experience and a passion for innovation, our chefs consistently deliver gastronomic delights that captivate the senses and leave a lasting impression on diners.
                                 </p>
                                 <a class="btn custom-btn" href="">Book A Table</a>
                             </div>
@@ -234,12 +238,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Phasel nec preti mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor, auctor id gravida condime, viverra quis sem. Curabit non nisl nec nisi sceleri maximus 
+                            <p style="">
+                                For over three decades, our restaurant has been renowned as a culinary landmark, captivating diners with our exquisite cuisine and unwavering commitment to excellence. From our acclaimed chefs to our affordable prices, we've earned the trust and loyalty of patrons who seek nothing less than the best.
                             </p>
                             <a class="btn custom-btn" href="">Book A Table</a>
                         </div>
                     </div>
+                    <br><br><br>
                     <div class="col-lg-7">
                         <div class="row">
                             <div class="col-sm-6">
@@ -247,7 +252,7 @@
                                     <i class="flaticon-cooking"></i>
                                     <h3>World’s best Chef</h3>
                                     <p>
-                                        Lorem ipsum dolor sit amet elit. Phasel nec preti mi. Curabit facilis ornare velit non vulput metus tortor
+                                        Experience excellence in every bite crafted by India's finest chef at our restaurant!
                                     </p>
                                 </div>
                             </div>
@@ -256,7 +261,7 @@
                                     <i class="flaticon-vegetable"></i>
                                     <h3>Natural ingredients</h3>
                                     <p>
-                                        Lorem ipsum dolor sit amet elit. Phasel nec preti mi. Curabit facilis ornare velit non vulput metus tortor
+                                        Indulge in a culinary journey with our wide selection of dishes to tantalize your taste buds!
                                     </p>
                                 </div>
                             </div>
@@ -267,7 +272,7 @@
                                     <i class="flaticon-medal"></i>
                                     <h3>Best quality products</h3>
                                     <p>
-                                        Lorem ipsum dolor sit amet elit. Phasel nec preti mi. Curabit facilis ornare velit non vulput metus tortor
+                                        We pride ourselves on using only the finest quality ingredients to craft exceptional dishes for our discerning patrons.
                                     </p>
                                 </div>
                             </div>
@@ -276,7 +281,7 @@
                                     <i class="flaticon-meat"></i>
                                     <h3>Fresh vegetables & Meet</h3>
                                     <p>
-                                        Lorem ipsum dolor sit amet elit. Phasel nec preti mi. Curabit facilis ornare velit non vulput metus tortor
+                                        We exclusively source fresh vegetables and meats to ensure the highest quality in every dish we serve.
                                     </p>
                                 </div>
                             </div>
@@ -287,16 +292,16 @@
                                     <i class="flaticon-courier"></i>
                                     <h3>Fastest door delivery</h3>
                                     <p>
-                                        Lorem ipsum dolor sit amet elit. Phasel nec preti mi. Curabit facilis ornare velit non vulput metus tortor
+                                        Experience lightning-fast door delivery, ensuring your favorite dishes arrive fresh and hot right to your doorstep.
                                     </p>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="feature-item">
                                     <i class="flaticon-fruits-and-vegetables"></i>
-                                    <h3>Ground beef & Low fat</h3>
+                                    <h3>Ground Mutton & Low fat</h3>
                                     <p>
-                                        Lorem ipsum dolor sit amet elit. Phasel nec preti mi. Curabit facilis ornare velit non vulput metus tortor
+                                        Indulge with our ground mutton dishes, boasting exceptional taste and low fat content.
                                     </p>
                                 </div>
                             </div>
@@ -317,9 +322,9 @@
                             <i class="flaticon-burger"></i>
                             <h2>Burgers</h2>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem. 
+                                
                             </p>
-                            <a href="">View Menu</a>
+                            <a href="{% url 'all_dishes' %}">View Menu</a>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -327,9 +332,9 @@
                             <i class="flaticon-snack"></i>
                             <h2>Snacks</h2>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem. 
+                                
                             </p>
-                            <a href="">View Menu</a>
+                            <a href="{% url 'all_dishes' %}">View Menu</a>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -337,9 +342,9 @@
                             <i class="flaticon-cocktail"></i>
                             <h2>Beverages</h2>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem. 
+
                             </p>
-                            <a href="">View Menu</a>
+                            <a href="{% url 'all_dishes' %}">View Menu</a>
                         </div>
                     </div>
                 </div>
@@ -377,7 +382,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Mini cheese Burger</span> <strong>$9.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -386,7 +391,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Double size burger</span> <strong>$11.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -395,7 +400,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Bacon, EGG and Cheese</span> <strong>$13.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -404,7 +409,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Pulled porx Burger</span> <strong>$18.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -413,7 +418,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Fried chicken Burger</span> <strong>$22.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -431,7 +436,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Corn Tikki - Spicy fried Aloo</span> <strong>$15.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -440,7 +445,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Bread besan Toast</span> <strong>$35.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -449,7 +454,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Healthy soya nugget snacks</span> <strong>$20.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -458,7 +463,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Tandoori Soya Chunks</span> <strong>$30.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -476,7 +481,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Single Cup Brew</span> <strong>$7.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -485,7 +490,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Caffe Americano</span> <strong>$9.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -494,7 +499,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Caramel Macchiato</span> <strong>$15.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -503,7 +508,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Standard black coffee</span> <strong>$8.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                     <div class="menu-item">
@@ -512,7 +517,7 @@
                                         </div>
                                         <div class="menu-text">
                                             <h3><span>Standard black coffee</span> <strong>$12.00</strong></h3>
-                                            <p>Lorem ipsum dolor sit amet elit. Phasel nec preti facil</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
