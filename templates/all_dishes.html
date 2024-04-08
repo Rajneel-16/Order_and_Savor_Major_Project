@@ -32,10 +32,11 @@
 <div class="food mt-0">
     <div class="container">
         <span style="color: brown; font-family: cursive; font-weight: 900; font-size: 80px;">Indian Cuisine</span>
+
         <h1><i><b><u style="color: black;"><p style="color: black;">              Taste of Punjab      </p></u></b></i></h1>
         <div class="row align-items-center">
         {% for i in dishes %}
-            {% if i.category.name == "Punjabi Dishes" %}
+            {% if i.category.name == "Taste of Punjab" %}
             <div class="custom-padding">
                 {% if i.is_available %}
                 <div class="food-item">
@@ -72,6 +73,255 @@
             {% endif %}
         {% endfor %}
         </div>
+        
+        <h1><i><b><u style="color: black;"><p style="color: black;">              Flavour of Gujrat      </p></u></b></i></h1>
+        <div class="row align-items-center">
+        {% for i in dishes %}
+            {% if i.category.name == "Flavour of Gujrat" %}
+            <div class="custom-padding">
+                {% if i.is_available %}
+                <div class="food-item">
+                {% else %}
+                <div class="food-item" style="background-color: lightgray;">
+                {% endif %}
+                    <img src="{{ i.image.url }}" style="height:250px; width:250px; border-top-left-radius:20px; border-bottom-right-radius:20px;" alt="{{i.name}}">
+
+                    <h2 class="my-3">{{i.name}}</h2>
+                    <p>
+                        {{i.details}}
+                    </p>
+                    <h4 class="menu-text" style="font-weight: normal;">
+                        {% if i.price != i.discounted_price %}
+                            <strong><del>&dollar;{{i.price}}</del></strong>
+                        {% endif %}
+                            <strong>&dollar;{{i.discounted_price}}</strong>
+                    </h4>
+                    <p>
+                        <script>
+                            var ing = '{{i.ingredients}}'.split(',');
+                            for(ingredient in ing){
+                                document.write("<span class='btn btn-sm mr-1 mb-1 btn-outline-success'>"+ing[ingredient]+"</span>");
+                            }
+                        </script>
+                    </p>
+                    {% if i.is_available %}
+                    <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% else %}
+                        <p class="text-danger">Not Available for delivery!</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <h1><i><b><u style="color: black;"><p style="color: black;">               Grace of Maharashtra      </p></u></b></i></h1>
+        <div class="row align-items-center">
+        {% for i in dishes %}
+            {% if i.category.name == "Grace of Maharashtra" %}
+            <div class="custom-padding">
+                {% if i.is_available %}
+                <div class="food-item">
+                {% else %}
+                <div class="food-item" style="background-color: lightgray;">
+                {% endif %}
+                    <img src="{{ i.image.url }}" style="height:250px; width:250px; border-top-left-radius:20px; border-bottom-right-radius:20px;" alt="{{i.name}}">
+
+                    <h2 class="my-3">{{i.name}}</h2>
+                    <p>
+                        {{i.details}}
+                    </p>
+                    <h4 class="menu-text" style="font-weight: normal;">
+                        {% if i.price != i.discounted_price %}
+                            <strong><del>&dollar;{{i.price}}</del></strong>
+                        {% endif %}
+                            <strong>&dollar;{{i.discounted_price}}</strong>
+                    </h4>
+                    <p>
+                        <script>
+                            var ing = '{{i.ingredients}}'.split(',');
+                            for(ingredient in ing){
+                                document.write("<span class='btn btn-sm mr-1 mb-1 btn-outline-success'>"+ing[ingredient]+"</span>");
+                            }
+                        </script>
+                    </p>
+                    {% if i.is_available %}
+                    <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% else %}
+                        <p class="text-danger">Not Available for delivery!</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <h1><i><b><u style="color: black;"><p style="color: black;">               Vibes of South India     </p></u></b></i></h1>
+        <div class="row align-items-center">
+        {% for i in dishes %}
+            {% if i.category.name == "Vibe of South India" %}
+            <div class="custom-padding">
+                {% if i.is_available %}
+                <div class="food-item">
+                {% else %}
+                <div class="food-item" style="background-color: lightgray;">
+                {% endif %}
+                    <img src="{{ i.image.url }}" style="height:250px; width:250px; border-top-left-radius:20px; border-bottom-right-radius:20px;" alt="{{i.name}}">
+
+                    <h2 class="my-3">{{i.name}}</h2>
+                    <p>
+                        {{i.details}}
+                    </p>
+                    <h4 class="menu-text" style="font-weight: normal;">
+                        {% if i.price != i.discounted_price %}
+                            <strong><del>&dollar;{{i.price}}</del></strong>
+                        {% endif %}
+                            <strong>&dollar;{{i.discounted_price}}</strong>
+                    </h4>
+                    <p>
+                        <script>
+                            var ing = '{{i.ingredients}}'.split(',');
+                            for(ingredient in ing){
+                                document.write("<span class='btn btn-sm mr-1 mb-1 btn-outline-success'>"+ing[ingredient]+"</span>");
+                            }
+                        </script>
+                    </p>
+                    {% if i.is_available %}
+                    <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% else %}
+                        <p class="text-danger">Not Available for delivery!</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <span style="color: brown; font-family: cursive; font-weight: 900; font-size: 80px;">Asian Cuisine</span>
+
+        <h1><i><b><u style="color: black;"><p style="color: black;">               Vibes of South India     </p></u></b></i></h1>
+        <div class="row align-items-center">
+        {% for i in dishes %}
+            {% if i.category.name == "Thai Taste Sensation" %}
+            <div class="custom-padding">
+                {% if i.is_available %}
+                <div class="food-item">
+                {% else %}
+                <div class="food-item" style="background-color: lightgray;">
+                {% endif %}
+                    <img src="{{ i.image.url }}" style="height:250px; width:250px; border-top-left-radius:20px; border-bottom-right-radius:20px;" alt="{{i.name}}">
+
+                    <h2 class="my-3">{{i.name}}</h2>
+                    <p>
+                        {{i.details}}
+                    </p>
+                    <h4 class="menu-text" style="font-weight: normal;">
+                        {% if i.price != i.discounted_price %}
+                            <strong><del>&dollar;{{i.price}}</del></strong>
+                        {% endif %}
+                            <strong>&dollar;{{i.discounted_price}}</strong>
+                    </h4>
+                    <p>
+                        <script>
+                            var ing = '{{i.ingredients}}'.split(',');
+                            for(ingredient in ing){
+                                document.write("<span class='btn btn-sm mr-1 mb-1 btn-outline-success'>"+ing[ingredient]+"</span>");
+                            }
+                        </script>
+                    </p>
+                    {% if i.is_available %}
+                    <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% else %}
+                        <p class="text-danger">Not Available for delivery!</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <h1><i><b><u style="color: black;"><p style="color: black;">               Chinese Speciality     </p></u></b></i></h1>
+        <div class="row align-items-center">
+        {% for i in dishes %}
+            {% if i.category.name == "Chinese" %}
+            <div class="custom-padding">
+                {% if i.is_available %}
+                <div class="food-item">
+                {% else %}
+                <div class="food-item" style="background-color: lightgray;">
+                {% endif %}
+                    <img src="{{ i.image.url }}" style="height:250px; width:250px; border-top-left-radius:20px; border-bottom-right-radius:20px;" alt="{{i.name}}">
+
+                    <h2 class="my-3">{{i.name}}</h2>
+                    <p>
+                        {{i.details}}
+                    </p>
+                    <h4 class="menu-text" style="font-weight: normal;">
+                        {% if i.price != i.discounted_price %}
+                            <strong><del>&dollar;{{i.price}}</del></strong>
+                        {% endif %}
+                            <strong>&dollar;{{i.discounted_price}}</strong>
+                    </h4>
+                    <p>
+                        <script>
+                            var ing = '{{i.ingredients}}'.split(',');
+                            for(ingredient in ing){
+                                document.write("<span class='btn btn-sm mr-1 mb-1 btn-outline-success'>"+ing[ingredient]+"</span>");
+                            }
+                        </script>
+                    </p>
+                    {% if i.is_available %}
+                    <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% else %}
+                        <p class="text-danger">Not Available for delivery!</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <h1><i><b><u style="color: black;"><p style="color: black;">               Mughlai Corner     </p></u></b></i></h1>
+        <div class="row align-items-center">
+        {% for i in dishes %}
+            {% if i.category.name == "Moghlai" %}
+            <div class="custom-padding">
+                {% if i.is_available %}
+                <div class="food-item">
+                {% else %}
+                <div class="food-item" style="background-color: lightgray;">
+                {% endif %}
+                    <img src="{{ i.image.url }}" style="height:250px; width:250px; border-top-left-radius:20px; border-bottom-right-radius:20px;" alt="{{i.name}}">
+
+                    <h2 class="my-3">{{i.name}}</h2>
+                    <p>
+                        {{i.details}}
+                    </p>
+                    <h4 class="menu-text" style="font-weight: normal;">
+                        {% if i.price != i.discounted_price %}
+                            <strong><del>&dollar;{{i.price}}</del></strong>
+                        {% endif %}
+                            <strong>&dollar;{{i.discounted_price}}</strong>
+                    </h4>
+                    <p>
+                        <script>
+                            var ing = '{{i.ingredients}}'.split(',');
+                            for(ingredient in ing){
+                                document.write("<span class='btn btn-sm mr-1 mb-1 btn-outline-success'>"+ing[ingredient]+"</span>");
+                            }
+                        </script>
+                    </p>
+                    {% if i.is_available %}
+                    <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% else %}
+                        <p class="text-danger">Not Available for delivery!</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+
     </div>
 </div>
 <!-- Food End -->
