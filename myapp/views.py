@@ -6,7 +6,8 @@ from django.contrib.auth import login, authenticate, logout
 from django.views.decorators.csrf import csrf_exempt
 from paypal.standard.forms import PayPalPaymentsForm
 from django.conf import settings
-from .models import Dish
+from datetime import datetime
+from .models import *
 import razorpay
 
 
@@ -22,7 +23,7 @@ def purchase(request,id):
     amount = order_detaile.discounted_price*100
     client = razorpay.Client(auth=('rzp_test_Gj86C8HLpdXP5v','QdbDoue6rGerUbLL48bEdxUD'))
 
-    payment = client.order.create({'amount':100,'currency':'INR','payment_capture':'1'})
+    payment = client.order.create({'amount':amount,'currency':'INR','payment_capture':'1'})
     print(payment)
 
     order = Order(customer_id = int(profile.pk),item_id = dish.pk,invoice_id = payment['id'])
@@ -34,34 +35,60 @@ def purchase(request,id):
 
 def success(request):
   return render(request,'success.html')
-
 @csrf_exempt
 def index(request):
-  if request.method == 'POST':
-    a = request.POST
-    order_id = ""
-    for key,val in a.items():
-      if key == 'razorpay_order_id':
-        order_id = val
-        break
-    order = Order.objects.filter(invoice_id = order_id).first()
-    if order is not None:
-      order.status = True
-      order.save()
-  context ={}
-  cats = Category.objects.all().order_by('name')
-  context['categories'] = cats
-  # print()
-  dishes = []
-  for cat in cats:
-    dishes.append({
-      'cat_id':cat.id,
-      'cat_name':cat.name,
-      'cat_img':cat.image,
-      'items':list(cat.dish_set.all().values())
-    })
-  context['menu'] = dishes
-  return render(request,'index.html', context)
+    if request.method == 'POST':
+        # Check if it's a form submission
+        name = request.POST.get('Name')
+        if name is not None:
+            # Handle form submission
+            name = request.POST.get('Name')
+            email = request.POST.get('email')
+            mobile = request.POST.get('mobile')
+            booking_date = request.POST.get('date')
+            booking_time = request.POST.get('time')
+            num_guests = request.POST.get('number_guest')
+
+            date_obj = datetime.strptime(booking_date, "%m/%d/%Y")
+            formatted_date = date_obj.strftime("%Y-%m-%d")
+            time_obj = datetime.strptime(booking_time, "%I:%M %p")
+            formatted_time = time_obj.strftime("%H:%M")
+            # Create a new TableBooking object and save it to the database
+            table_booking = TableBooking.objects.create(
+                name=name,
+                email=email,
+                mobile=mobile,
+                booking_date=formatted_date,
+                booking_time=formatted_time,
+                num_guests=num_guests
+            ) 
+            # Redirect the user to a success page or wherever you want
+            return render(request, 'index.html')
+        else:
+          a = request.POST
+          order_id = ""
+          for key, val in a.items():
+              if key == 'razorpay_order_id':
+                  order_id = val
+                  break
+          order = Order.objects.filter(invoice_id=order_id).first()
+          if order is not None:
+              order.status = True
+              order.save()
+
+    context = {}
+    cats = Category.objects.all().order_by('name')
+    context['categories'] = cats
+    dishes = []
+    for cat in cats:
+        dishes.append({
+            'cat_id': cat.id,
+            'cat_name': cat.name,
+            'cat_img': cat.image,
+            'items': list(cat.dish_set.all().values())
+        })
+    context['menu'] = dishes
+    return render(request, 'index.html', context)
 
 
 

@@ -101,7 +101,7 @@ class Order(models.Model):
     class Meta:
         verbose_name_plural = "Order Table"
 
-'''
+
 class TableBooking(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -111,4 +111,4 @@ class TableBooking(models.Model):
     num_guests = models.IntegerField()
 
     def __str__(self):
-        return f"{self.name} - {self.booking_date} {self.booking_time}" '''
+        return f"{self.name} - {self.booking_date} {self.booking_time}"

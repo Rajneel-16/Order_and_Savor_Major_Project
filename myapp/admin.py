@@ -11,9 +11,10 @@ class ContactAdmin(admin.ModelAdmin):
 admin.site.register(Contact, ContactAdmin) '''
 
 from django.contrib import admin
-from myapp.models import Contact, Category, Team, Dish, Profile,Order
+from myapp.models import Contact, Category, Team, Dish, Profile,Order,TableBooking
 
-admin.site.site_header = "Rajneel's Spice | Rajneel Wagh"
+admin.site.site_header = "Order & Savor | Project by Rajneel Wagh"
+admin.site.register(TableBooking)
 
 class ContactAdmin(admin.ModelAdmin):
     list_display = ['id','name','email','subject','added_on','is_approved']

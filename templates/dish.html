@@ -45,15 +45,16 @@
                     {% if user.is_superuser or user.is_staff %}
                     <h1>Website admin cannot order a dish</h1>
                     {% elif user.is_active%}
-                        <a href="purchase">buy</a>
+                        <a href="purchase">BUY</a>
+                        <br>
                     {% else %}
                         <p><a href="{% url 'login' %}">Please Login to Order a dish</a> </p>
                     {% endif %}
                     {% else %}
                         <p class="text-danger">Not Available for delivery!</p>
                     {% endif %}
-
-                    <a href="/dishes/?q={{dish.category.id}}">Find more dishes in "{{dish.category.name}}" section</a>
+                    <br>
+                    <a href="{% url 'all_dishes' %}">Find more dishes in "{{dish.category.name}}" section</a>
                 </div>
             </div>
         </div>
