@@ -163,6 +163,7 @@ def register(request):
       profile = Profile(user=usr,contact_number=contact)
       profile.save()
       context['status'] = f"User {name} Registration Successfull!"
+      return render(request,'login.html')
     else:
       context['error'] = f"Registration is Not Successfull! A user with this username or email already exists!"
       # in register.html, i have created an API using AJAX to check if any user with the same email already exists
