@@ -63,10 +63,11 @@
                             }
                         </script>
                     </p>
-                    {% if i.is_available %}
+                    {% if user.is_authenticated and i.is_available and not user.is_superuser %}
                     <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% elif not i.is_available %}
+                        <p class="text-danger">Not Available!</p>
                     {% else %}
-                        <p class="text-danger">Not Available for delivery!</p>
                     {% endif %}
                 </div>
             </div>
@@ -104,10 +105,11 @@
                             }
                         </script>
                     </p>
-                    {% if i.is_available %}
+                    {% if user.is_authenticated and i.is_available and not user.is_superuser %}
                     <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% elif not i.is_available %}
+                        <p class="text-danger">Not Available!</p>
                     {% else %}
-                        <p class="text-danger">Not Available for delivery!</p>
                     {% endif %}
                 </div>
             </div>
@@ -145,10 +147,11 @@
                             }
                         </script>
                     </p>
-                    {% if i.is_available %}
+                    {% if user.is_authenticated and i.is_available and not user.is_superuser %}
                     <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% elif not i.is_available %}
+                        <p class="text-danger">Not Available!</p>
                     {% else %}
-                        <p class="text-danger">Not Available for delivery!</p>
                     {% endif %}
                 </div>
             </div>
@@ -186,10 +189,11 @@
                             }
                         </script>
                     </p>
-                    {% if i.is_available %}
+                    {% if user.is_authenticated and i.is_available and not user.is_superuser %}
                     <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% elif not i.is_available %}
+                        <p class="text-danger">Not Available!</p>
                     {% else %}
-                        <p class="text-danger">Not Available for delivery!</p>
                     {% endif %}
                 </div>
             </div>
@@ -199,7 +203,7 @@
 
         <span style="color: brown; font-family: cursive; font-weight: 900; font-size: 80px;">Asian Cuisine</span>
 
-        <h1><i><b><u style="color: black;"><p style="color: black;">               Vibes of South India     </p></u></b></i></h1>
+        <h1><i><b><u style="color: black;"><p style="color: black;">               Thai Taste Sensation     </p></u></b></i></h1>
         <div class="row align-items-center">
         {% for i in dishes %}
             {% if i.category.name == "Thai Taste Sensation" %}
@@ -229,10 +233,11 @@
                             }
                         </script>
                     </p>
-                    {% if i.is_available %}
+                    {% if user.is_authenticated and i.is_available and not user.is_superuser %}
                     <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% elif not i.is_available %}
+                        <p class="text-danger">Not Available!</p>
                     {% else %}
-                        <p class="text-danger">Not Available for delivery!</p>
                     {% endif %}
                 </div>
             </div>
@@ -270,10 +275,11 @@
                             }
                         </script>
                     </p>
-                    {% if i.is_available %}
+                    {% if user.is_authenticated and i.is_available and not user.is_superuser %}
                     <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% elif not i.is_available %}
+                        <p class="text-danger">Not Available!</p>
                     {% else %}
-                        <p class="text-danger">Not Available for delivery!</p>
                     {% endif %}
                 </div>
             </div>
@@ -311,10 +317,11 @@
                             }
                         </script>
                     </p>
-                    {% if i.is_available %}
+                    {% if user.is_authenticated and i.is_available and not user.is_superuser %}
                     <a href="{% url 'dish' id=i.id %}">Order Now</a>
+                    {% elif not i.is_available %}
+                        <p class="text-danger">Not Available!</p>
                     {% else %}
-                        <p class="text-danger">Not Available for delivery!</p>
                     {% endif %}
                 </div>
             </div>
