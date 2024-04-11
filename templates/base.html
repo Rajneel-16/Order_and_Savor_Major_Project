@@ -42,25 +42,25 @@
                 <div class="collapse navbar-collapse justify-content-start" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                         <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
-                        <a href="{% url 'about' %}" class="nav-item nav-link">About Us</a>
-                        <a href="{% url 'team' %}" class="nav-item nav-link">Our Team</a>
-                        <a href="{% url 'all_dishes' %}" class="nav-item nav-link">Menu</a>
-                        <a href="{% url 'contact' %}" class="nav-item nav-link">Contact Us</a>
-                        {% if user.is_authenticated %}
+                        <a href="{% url 'about' %}" class="nav-item nav-link active">About Us</a>
+                        <a href="{% url 'team' %}" class="nav-item nav-link active">Our Team</a>
+                        <a href="{% url 'all_dishes' %}" class="nav-item nav-link active">Menu</a>
+                        <a href="{% url 'contact' %}" class="nav-item nav-link active">Contact Us</a>
+                        <a href="#" class="nav-link nav-item dropdown-toggle active" data-toggle="dropdown"><i class="fas fa-user"></i></a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user"></i></a>
                             <div class="dropdown-menu">
+                            {% if user.is_authenticated %}
                                 {% if user.is_superuser or user.is_staff %}
                                 <a href="{% url 'admin:index' %}" class="dropdown-item">Dashboard</a>
                                 {% else %}
                                 <a href="{% url 'dashboard' %}" class="dropdown-item">Dashboard</a>
                                 {% endif %}
                                 <a href="{% url 'logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                                <a href="{% url 'register' %}" class="nav-link"><i class="fas fa-user"></i></a>
+                            {% endif %}
                             </div>
                         </div>
-                        {% else %}
-                        <a href="{% url 'register' %}" class="nav-link"><i class="fas fa-user"></i></a>
-                        {% endif %}                     
                     </div>
                 </div>
             </div>
