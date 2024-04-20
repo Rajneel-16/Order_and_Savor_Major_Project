@@ -151,7 +151,12 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button class="btn custom-btn" type="submit" style="color: brown; font-weight: 999; background-color: yellowgreen;">Book Now</button>
+                                    <button class="btn custom-btn" type="submit" style="color: brown; font-weight: 999; background-color: yellowgreen;" id="bookBtn">Book Now</button>
+                                    <script>
+                                        document.getElementById('bookBtn').addEventListener('click', function() {
+                                                alert("Your booking is confirmed! If any problems regarding table availability, our staff will reach out to you");
+                                        });
+                                    </script>
                                 </div>
                             </form>
 

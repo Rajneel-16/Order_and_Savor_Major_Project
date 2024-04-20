@@ -42,8 +42,8 @@
         <img class="m-2 h-24 w-28 rounded-md border object-cover object-center" src={{order.image.url}} alt="" />
         <div class="flex w-full flex-col px-4 py-4">
           <span class="font-semibold">{{order.name}}</span>
-          <span class="float-right text-gray-400">{{order.price}} Rs<span>
-          <p class="text-lg font-bold">{{order.discounted_price}} Rs</p>
+          <span class="float-right text-gray-400">{{order.price}} $<span>
+          <p class="text-lg font-bold">{{order.discounted_price}} $</p>
         </div>
       </div>
     </div>
@@ -55,20 +55,20 @@
       <div class="mt-6 border-t border-b py-2">
         <div class="flex items-center justify-between">
           <p class="text-sm font-medium text-gray-900">Subtotal</p>
-          <p class="font-semibold text-gray-900">Rs {{order.price}}</p>
+          <p class="font-semibold text-gray-900">$ {{order.price}}</p>
         </div>
         <div class="flex items-center justify-between">
           <p class="text-sm font-medium text-gray-900">Discount</p>
-          <p class="font-semibold text-gray-900">Rs {{discount}}</p>
+          <p class="font-semibold text-gray-900">$ {{discount}}</p>
         </div>
         <div class="flex items-center justify-between">
           <p class="text-sm font-medium text-gray-900">Delivery Charges</p>
-          <p class="font-semibold text-gray-900">RS 0.00</p>
+          <p class="font-semibold text-gray-900">$ 0.00</p>
         </div>
       </div>
       <div class="mt-6 flex items-center justify-between">
         <p class="text-sm font-medium text-gray-900">Total</p>
-        <p class="text-2xl font-semibold text-gray-900">RS {{order.discounted_price}}</p>
+        <p class="text-2xl font-semibold text-gray-900">$ {{order.discounted_price}}</p>
       </div>
     </div>
     <form method='POST'>
