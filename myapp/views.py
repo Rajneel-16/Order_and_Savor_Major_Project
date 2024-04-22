@@ -21,9 +21,9 @@ def purchase(request,id):
   if request.method == "POST":
     order_detaile = Dish.objects.get(pk = id)
     amount = order_detaile.discounted_price*100
-    client = razorpay.Client(auth=('rzp_test_Gj86C8HLpdXP5v','QdbDoue6rGerUbLL48bEdxUD'))
+    client = razorpay.Client(auth=('rzp_test_ZErldzUUg8FGJQ','S370uoC3vhKpaeaLZnNdKPKT'))
 
-    payment = client.order.create({'amount':amount,'currency':'INR','payment_capture':'1'})
+    payment = client.order.create({'amount':100,'currency':'INR','payment_capture':'1'})
     print(payment)
 
     order = Order(customer_id = int(profile.pk),item_id = dish.pk,invoice_id = payment['id'])
@@ -197,7 +197,7 @@ def signin(request):
 
     check_user = authenticate(username = email, password = passw)
 
-    if check_user:
+    if check_user is not None:
       login(request,check_user)
       # after login, either send the user to admin page OR dashboard OR show invalid login
       if check_user.is_superuser or check_user.is_staff:
