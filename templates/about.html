@@ -11,8 +11,8 @@
                         <h2>About Us</h2>
                     </div>
                     <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">About Us</a>
+                        <a href="{% url 'index' %}">Home</a>
+                        <a href="#">About Us</a>
                     </div>
                 </div>
             </div>
@@ -27,31 +27,31 @@
                     <div class="col-md-4">
                         <div class="food-item">
                             <i class="flaticon-burger"></i>
-                            <h2>Burgers</h2>
+                            <h2>Indian</h2>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem. 
+                                Embark on a flavorful journey through the rich tapestry of Indian cuisine at our restaurant
                             </p>
-                            <a href="">View Menu</a>
+                            <a href="{% url 'all_dishes' %}">View Menu</a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="food-item">
                             <i class="flaticon-snack"></i>
-                            <h2>Snacks</h2>
+                            <h2>Continental</h2>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem. 
+                                Indulge in a culinary odyssey through the diverse flavors of Continental cuisine at our restaurant
                             </p>
-                            <a href="">View Menu</a>
+                            <a href="{% url 'all_dishes' %}">View Menu</a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="food-item">
                             <i class="flaticon-cocktail"></i>
-                            <h2>Beverages</h2>
+                            <h2>Chinese</h2>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasel nec pretium mi. Curabit facilis ornare velit non vulputa. Aliquam metus tortor auctor quis sem. 
+                                Experience an enticing voyage through the intricate flavors of Chinese cuisine at our restaurant.
                             </p>
-                            <a href="">View Menu</a>
+                            <a href="{% url 'all_dishes' %}">View Menu</a>
                         </div>
                     </div>
                 </div>
@@ -80,12 +80,12 @@
                             </div>
                             <div class="about-text">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
+                                    For over three decades, our restaurant has been a culinary cornerstone, delighting patrons since 1990 with our timeless recipes and warm hospitality. From the very first dish served to our latest creation, we've remained dedicated to crafting unforgettable dining experiences.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
+                                    Our enduring commitment to quality and innovation has earned us the enduring affection of our cherished customers, who have made our establishment a beloved fixture in their lives. Through the years, we've cherished every moment spent in the kitchen, every satisfied smile leaving our dining room, and every memory shared over a meal. As we continue to evolve and grow, we remain grateful for the unwavering support of our loyal patrons, who inspire us to reach new heights every day. Here's to many more years of culinary excellence and cherished memories shared around our tables.
                                 </p>
-                                <a class="btn custom-btn" href="">Book A Table</a>
+                                <a class="btn custom-btn" href="{% url 'index' %}">Book A Table</a>
                             </div>
                         </div>
                     </div>
